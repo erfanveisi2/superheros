@@ -12,6 +12,12 @@ class App extends Component{
       searchField:''
     }
   }
+
+  componentDidMount(){
+    fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json')
+    .then(response=>response.json())
+    .then(response=>this.setState({monsters:response}))
+  }
 }
 
 export default App;
