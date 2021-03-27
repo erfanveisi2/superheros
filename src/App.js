@@ -27,10 +27,14 @@ class App extends Component {
 
   render() {
     const {superheros , searchField}=this.state
+    const filteredSuperheros = superheros.filter(
+      superhero=>superhero.name.toLowerCase().includes(searchField.toLowerCase())
+    )
 
     return (
       <div className='App'>
       <SearchBox placeholder='enter superhero name...' handleChanges={this.handleChange}/>
+      <CardList superheros={filteredSuperheros}/>
       </div>
     )
   }
