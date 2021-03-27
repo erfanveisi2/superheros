@@ -1,6 +1,7 @@
 import './App.css';
 import { Component } from 'react';
 import { CardList } from './components/card-list/card-list.component';
+import { SearchBox } from './components/search-box/search-box.component';
 
 
 class App extends Component {
@@ -19,12 +20,17 @@ class App extends Component {
       .then(response => this.setState({superheros : response}))
   }
 
+    handleChange=(e)=>{
+    this.setState({searchField: e.target.value})
+  }
+
 
   render() {
     const {superheros , searchField}=this.state
 
     return (
       <div className='App'>
+      <SearchBox placeholder='enter superhero name...' handleChanges={this.handleChange}/>
       </div>
     )
   }
