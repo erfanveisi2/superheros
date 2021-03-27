@@ -21,11 +21,10 @@ class App extends Component {
 
 
   render() {
-    const {superheros}=this.state
+    const {superheros , searchField}=this.state
 
     return (
       <div className='App'>
-        <CardList superheros={superheros} />
       </div>
     )
   }
