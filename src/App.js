@@ -34,7 +34,7 @@ class App extends Component {
     return (
       <div className='App'>
       <h1>superheros</h1>
-      <SearchBox placeholder='enter superhero name...' handleChanges={this.handleChange}/>
+      <SearchBox placeholder='search superheros' handleChanges={this.handleChange}/>
       <CardList superheros={filteredSuperheros}/>
       </div>
     )
